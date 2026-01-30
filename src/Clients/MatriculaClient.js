@@ -15,9 +15,9 @@ const consultarPorId = async (id) => {
     return data
 }
 //post
-const baseUrl2="/matricula/api/v1.0/estudiantes"
+const baseUrlsave="/matricula/api/v1.0/estudiantes"
 const guardar = async (estudiante) => {
-    const data = await axios.post(baseUrl2, estudiante).then((res) => res.data);
+    const data = await axios.post(baseUrlsave, estudiante).then((res) => res.data);
     console.log(data)
     return data
 }
@@ -40,7 +40,7 @@ const eliminar = async (id) => {
     return data
 }
 // crear una fachada y exportarla
-export const actualizarFachada = async (id,estudiante) => {
+export const actualizarFachadaPut = async (id,estudiante) => {
    return await actualizar(id,estudiante)
 }
 export const guardarFachada = async (estudiante) => {

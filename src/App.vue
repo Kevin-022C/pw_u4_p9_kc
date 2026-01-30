@@ -1,7 +1,14 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/postEstudiante">Agregar Estudiante</router-link> |
+    <router-link to="/consultarUsuarios">Estudiantes</router-link> |
+    <router-link to="/idEstudiante">Estudiante ID</router-link> |
+    <router-link to="/putEstudiante">Estudiante PUT</router-link> |
+    <router-link to="/patchEstudiante">Estudiante PATCH</router-link> |
+    <router-link to="/deleteEstudiante">Estudiante DELETE</router-link> |
+    
+
   </nav>
   <router-view/>
 </template>
