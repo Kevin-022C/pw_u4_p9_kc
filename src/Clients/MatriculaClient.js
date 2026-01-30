@@ -23,19 +23,19 @@ const guardar = async (estudiante) => {
 }
 //put
 const actualizar = async (id,estudiante) => {
-    const data = await axios.put(`${baseUrl2}/${id}`, estudiante).then((res) => res.data);
+    const data = await axios.put(`${baseUrl1}/${id}`, estudiante).then((res) => res.data);
     console.log(data)
     return data
 }
 //patch
 const actualizarParcial = async (id,estudiante) => {
-    const data = await axios.patch(`${baseUrl2}/${id}`, estudiante).then((res) => res.data);
+    const data = await axios.patch(`${baseUrl1}/${id}`, estudiante).then((res) => res.data);
     console.log(data)
     return data
 }
 //delete
 const eliminar = async (id) => {
-    const data = await axios.delete(`${baseUrl2}/${id}`).then((res) => res.data);
+    const data = await axios.delete(`${baseUrl1}/${id}`).then((res) => res.data);
     console.log(data)
     return data
 }
