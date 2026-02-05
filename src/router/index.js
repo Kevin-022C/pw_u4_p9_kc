@@ -10,7 +10,11 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: HomeView,
+    meta: {
+      requiereAutorizacion: true,
+      esPublica: false
+    }
   },
   {
     path: '/about',
@@ -23,22 +27,38 @@ const routes = [
   {
     path: '/consultarUsuarios',
     name: 'consultarUsuarios',
-    component: ConsultarUsuariosView
+    component: ConsultarUsuariosView,
+    meta: {
+      requiereAutorizacion: true,
+      esPublica: false
+    }
   },
   {
     path: '/idEstudiante',
     name: 'idEstudiante',
-    component: ConsultarEstudianteId
+    component: ConsultarEstudianteId,
+    meta: {
+      requiereAutorizacion: true,
+     
+    }
   },
   {
     path: '/putEstudiante',
     name: 'putEstudiante',
-    component: putEstudianteView
+    component: putEstudianteView,
+    meta: {
+      requiereAutorizacion: true,
+     
+    }
   },
   {
     path: '/patchEstudiante',
     name: 'patchEstudiante',
-    component: patchEstudianteView
+    component: patchEstudianteView,
+    meta: {
+      requiereAutorizacion: true,
+     
+    }
   },
   {
     path: '/deleteEstudiante',
@@ -56,5 +76,24 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
 })
+//configuracion de un guardian para proteger las rutas
+router.beforeEach((to, from, next) => {
+  const requiereAutorizacion = to.meta.requiereAutorizacion
+  const esPublica = to.meta.esPublica
+  const token = localStorage.getItem('token')
 
+  if (requiereAutorizacion && !token) {
+    // Si la ruta requiere autenticación y no hay token, redirigir al login
+    next({ name: 'login' })
+    console.log('No hay token, redirigiendo al login')
+  } else if (esPublica && token) {
+    // Si la ruta es pública y hay token, redirigir a la home
+    next({ name: 'home' })
+    console.log('Hay token, redirigiendo a la home')
+  } else {
+    console.log('No hay problemas, continuando con la navegación')
+    // Si no hay problemas, continuar con la navegación
+    next()
+  }
+})
 export default router

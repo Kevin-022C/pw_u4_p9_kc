@@ -1,0 +1,4 @@
+vue.js:Guardianes
+proteje una ruta con un acceso no autorizado 
+primer taller abrir proyecti en vue indicar q en ciertas paginas
+el  nivel de autoizacion (abrir el sistema dependiendo de donde esta ubicado) 
