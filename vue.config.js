@@ -7,6 +7,11 @@ module.exports = defineConfig({
         target: 'http://localhost:8086',
         changeOrigin: true,
         secure: false,
+      },
+      '/auth': {
+        target: 'http://localhost:8082',
+        changeOrigin: true,
+        secure: false,
       }
     }
   }
