@@ -5,15 +5,16 @@ import ConsultarEstudianteId from '@/components/ConsultarEstudianteId.vue'
 import putEstudianteView from '@/views/putEstudianteView.vue'
 import patchEstudianteView from '@/views/patchEstudianteView.vue'
 import deleteEstudianteView from '@/views/deleteEstudianteView.vue'
+import LoginView from '@/views/LoginView.vue'
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: HomeView,
+    path: '/login',
+    name: 'login',
+    component: LoginView,
     meta: {
-      requiereAutorizacion: true,
-      esPublica: false
+     esPublica: false
+     
     }
   },
   {
@@ -76,7 +77,7 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
 })
-//configuracion de un guardian para proteger las rutas
+
 router.beforeEach((to, from, next) => {
   const requiereAutorizacion = to.meta.requiereAutorizacion
   const esPublica = to.meta.esPublica

@@ -2,3 +2,5 @@ vue.js:Guardianes
 proteje una ruta con un acceso no autorizado 
 primer taller abrir proyecti en vue indicar q en ciertas paginas
 el  nivel de autoizacion (abrir el sistema dependiendo de donde esta ubicado) 
+el tiempo de token eso todavia nose ve pero el profe puede poner la libreria y darnos el metodo de 
+para controlar el estado que es dependiendo del

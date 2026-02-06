@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
+    <router-link to="/login">HomeLogin</router-link> |
     <router-link to="/postEstudiante">Agregar Estudiante</router-link> |
     <router-link to="/consultarUsuarios">Estudiantes</router-link> |
     <router-link to="/idEstudiante">Estudiante ID</router-link> |
