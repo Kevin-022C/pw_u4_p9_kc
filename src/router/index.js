@@ -31,7 +31,7 @@ const routes = [
     component: ConsultarUsuariosView,
     meta: {
       requiereAutorizacion: true,
-      esPublica: false
+     // esPublica: false
     }
   },
   {
@@ -64,12 +64,21 @@ const routes = [
   {
     path: '/deleteEstudiante',
     name: 'deleteEstudiante',
-    component: deleteEstudianteView 
+    component: deleteEstudianteView ,
+    component: patchEstudianteView,
+    meta: {
+      requiereAutorizacion: true,
+     
+    }
   },
   {
     path: '/postEstudiante',
     name: 'postEstudiante',
-    component: () => import(/* webpackChunkName: "postEstudiante" */ '../views/postEstudianteView.vue')
+    component: () => import(/* webpackChunkName: "postEstudiante" */ '../views/postEstudianteView.vue'),
+    meta: {
+      requiereAutorizacion: true,
+     
+    }
   }
 ]
 
